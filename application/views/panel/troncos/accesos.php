@@ -21,7 +21,6 @@
                 <tr>
                     <th>Nombre y apellido</th>
                     <th>Usuario</th>
-                    <th>Correo</th>
                     <th>Perfil</th>
                     <th>Opciones</th>
                 </tr>
@@ -37,7 +36,6 @@
                     <tr>
                         <td><?php echo $value['nombre'] . ' ' . $value['apellido'] ?></td>
                         <td><?php echo $value['usuario'] ?></td>
-                        <td><?php echo $value['correo'] ?></td>
                         <td><?php echo $value['perfil'] ?></td>
                         <td>
                             <button class="btn btn-primary" title="Modificar" id="edit" type="button" style="padding: 1px 2px 0px 5px;"> <i class="fa fa-edit" id="<?php echo $value['id_acceso'] ?>" ></i></button>
@@ -82,36 +80,6 @@
                             <div class="form-group">
                                 <label>Apellido</label>
                                 <input type="text" maxlength="100" name="apellido" id="apellido" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-lg-1">
-                            <div class="form-group">
-                                <label>Nac.</label>
-                                <select id="nac" name="nac" class="form-control">
-                                    <option value="">...</option>
-                                    <option value="V">V</option>
-                                    <option value="E">E</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Cedula</label>
-                                <input type="text" maxlength="100" name="ci" id="ci" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>Telefono</label>
-                                <input type="text" maxlength="100" name="tlf" id="tlf" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>Correo</label>
-                                <input type="text" maxlength="100" name="correo" id="correo" class="form-control">
                             </div>
                         </div>
                         <div class="col-lg-4">

@@ -164,44 +164,6 @@ class Accesos extends CI_Model {
         } else
             return false;
     }
-
-
-    function insercionGeneral($data, $tipo) {
-        //$this->db->insert_id();
-
-        if ($this->db->insert($data['tabla'], $data['data'])) {
-            if ($tipo == 1) {
-                return true;
-            } elseif ($tipo == 2) {
-                return $this->db->insert_id();
-            }
-        } else
-            return false;
-    }
-    
-    /*
-     * function ModificarDatosGeneral
-     * @param 'data','tabla','where'
-     */
-
-    function ModificarDatosGeneral($data) {
-        $query_persona = $this->db->where($data['where'])
-                ->update($data['tabla'], $data['data']);
-        if ($query_persona) {
-            return true;
-        } else
-            return false;
-    }
-
-    /*
-     * function EliminarDataUser
-     * @param 
-     */
-
-    function EliminarDataUser($data) {
-        $query_acceso = $this->db->where('id_acceso', $data['id_acceso'])
-                ->update('accesos', $data['data']);
-    }
     
     
     

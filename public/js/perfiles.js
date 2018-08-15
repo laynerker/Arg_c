@@ -139,11 +139,6 @@ $(function () {
         CambioEstatus($(this).find('i').attr('id'), $(this).attr('name'), tabla, campo, id_estatus,$(this).parent().find('#reactivar'));
         $(this).attr('name','2');
     });
-    
-    $("tbody").delegate("#imgs", "click", function () {
-        location = base_url + 'Panel/bandeja/admin_img/' + $(this).find('i').attr('id');
-
-    });
 
     $("tbody").delegate("#reactivar", "click", function () {
         CambioEstatus($(this).find('i').attr('id'), $(this).attr('name'), tabla, campo, id_estatus,$(this));

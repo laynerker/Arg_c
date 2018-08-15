@@ -58,45 +58,10 @@ class Cgeneral extends CI_Controller {
             case '1':
                 $this->listaPerfil();
                 break;
-            case '2':
-                $this->listaTiposConsumibles();
-                break;
-            case '3':
-                $this->listaColeccion();
-                break;
-            case '4':
-                $this->listaEmpresas();
-                break;
-            case '5':
-                $this->listaTipoVivienda();
-                break;
             case '6':
                 $this->dataEditarUser($this->input->post("id"));
                 break;
-            case '7':
-                $this->datosEditarProdictos($this->input->post("id"));
-                break;
-            case '9':
-                $this->datosEditarColeccion($this->input->post("id"));
-                break;
-            case '10':
-                $this->datosEditarEmpresas($this->input->post("id"));
-                break;
-            case '11':
-                $this->datosEditarProyecto($this->input->post("id"));
-                break;
-            case '12':
-                $this->datosEditarQuienesSomos($this->input->post("id"));
-                break;
-            case '13':
-                $this->datosSection($this->input->post("id"));
-                break;
-            case '14':
-                $this->listaTipo('s');
-                break;
-            case '15':
-                $this->listaColeccion($this->input->post("id"));
-                break;
+            
         }
     }
 
@@ -114,89 +79,6 @@ class Cgeneral extends CI_Controller {
         echo json_encode($valores);
     }
 
-    public function listaTiposConsumibles() {
-        $valores = $this->General->listadoTiposConsumibles();
-        foreach ($valores as $value) {
-            echo '<option value="' . $value['id_tipo_consu'] . '">' . $value['nombre'] . '</option>';
-        }
-    }
-    public function dataTiposEmpresas() {
-        $valores = $this->General->listadoTiposEmpresas();
-        echo json_encode($valores);
-    }
-
-    public function datosEditarProdictos($id_producto) {
-        $valores = $this->M_listas_generales->DataProducto($id_producto);
-        echo json_encode($valores);
-        //var_dump($valores);
-    }
-    public function datosEditarProyecto($id_proyecto) {
-        $valores = $this->M_listas_generales->DataProyecto($id_proyecto);
-        echo json_encode($valores);
-        //var_dump($valores);
-    }
-
-    public function datosEditarQuienesSomos($id_tipo) {
-        $valores = $this->M_listas_generales->DataListaQuienesSomos($id_tipo);
-        echo json_encode($valores);
-        //var_dump($valores);
-    }
-    public function datosSection($id_tipo) {
-        $valores = $this->M_listas_generales->DataListaTipos($id_tipo);
-        echo json_encode($valores);
-        //var_dump($valores);
-    }
-
-    public function datosEditarColeccion($id_coleccion) {
-        $valores = $this->M_listas_generales->DataListaColeccion($id_coleccion);
-        echo json_encode($valores);
-        //var_dump($valores);
-    }
-
-    public function datosEditarEmpresas($id_empresa) {
-        $valores = $this->M_listas_generales->DataListaEmpresas($id_empresa);
-        echo json_encode($valores);
-        //var_dump($valores);
-    }
-
-    public function listaColeccion($id) {
-        $id = isset($id)?$id:'a';
-        $t = isset($id)?'s':null;
-        $valores = $this->M_listas_generales->DataListaColeccion($t,$id);
-        //var_dump($id_estado);
-        if ($valores) {
-            $i = 1;
-            foreach ($valores as $value) {
-                echo '<option value="' . $value['id_coleccion'] . '">' . $value['coleccion'] . '</option>';
-                $i++;
-            }
-        }
-    }
-
-    public function listaEmpresas() {
-        $valores = $this->M_listas_generales->DataListaEmpresas('a');
-        //var_dump($id_estado);
-        if ($valores) {
-            $i = 1;
-            foreach ($valores as $value) {
-
-                echo '<option value="' . $value['id_empresa'] . '">' . $value['nombre'] . '</option>';
-                $i++;
-            }
-        }
-    }
-
-    public function listaTipoVivienda() {
-        $valores = $this->M_listas_generales->DataListaTipoVivienda();
-        //var_dump($valores);
-        $i = 1;
-        foreach ($valores as $value) {
-
-            echo '<option value="' . $value['id_tip_viv'] . '">' . $value['tipo_vivienda'] . '</option>';
-            $i++;
-        }
-    }
-    
     function CambioEstatus($tabla,$campo,$estatus) {
         $this->load->model("General");
         $data = array(

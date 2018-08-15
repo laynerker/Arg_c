@@ -27,11 +27,8 @@
                                 <?php //var_dump($data);
                                 if($data){
                                 foreach ($data as $value) { 
-                                    if ($value['id_perfil'] != 1) {
-                                        $acceso = "block";
-                                    }else{
-                                        $acceso = "none";
-                                    }
+                                    $acceso = "block";
+                                    
                                     if ($value['estatus'] == 2) {
                                         $accesoE = "block";
                                     }else{

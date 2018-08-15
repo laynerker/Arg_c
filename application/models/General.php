@@ -78,4 +78,27 @@ class General extends CI_Model {
             return false;
     }
     
+    function NumDatos($table,$where,$campos) {
+        $query = $this->db->select($campos)
+                ->where($where)
+                ->get($table);
+            return $query->num_rows();
+    }
+    
+    function DataUser($clvusuario) {
+        $query = $this->db->select('*')
+                ->from('accesos')
+                ->join('personas', 'accesos.id_persona = personas.id_persona')
+                ->where(array('accesos.id_acceso' => $clvusuario))
+                ->get();
+
+        if ($query->num_rows() > 0) {
+
+            $user = $query->result_array();
+        } else
+            $user = false;
+
+        return $user;
+    }
+    
 }    

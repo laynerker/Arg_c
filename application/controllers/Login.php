@@ -101,11 +101,7 @@ class Login extends CI_Controller {
             $data_persona = array(
                 'nombre' => $this->input->post("nombre"),
                 'apellido' => $this->input->post("apellido"),
-                'correo' => $this->input->post("correo"),
-                'telefono' => $this->input->post("tlf"),
-                'ci' => $this->input->post("ci"),
-                'nacionalidad' => $this->input->post("nac"),
-                'estatus_empre' => '1'
+                'estatus_per' => '1'
             );
             $data = array(
                 'data' => $data_persona,
@@ -171,11 +167,7 @@ class Login extends CI_Controller {
 
             $data_persona = array(
                 'nombre' => $this->input->post("nombre"),
-                'apellido' => $this->input->post("apellido"),
-                'correo' => $this->input->post("correo"),
-                'telefono' => $this->input->post("tlf"),
-                'ci' => $this->input->post("ci"),
-                'nacionalidad' => $this->input->post("nac")
+                'apellido' => $this->input->post("apellido")
             );
             $where_per = array(
                 'id_persona' => $this->input->post("id_persona")

@@ -23,7 +23,7 @@
 
         <!-- Custom Fonts -->
         <link href="<?php echo base_url(); ?>public/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link rel="shortcut icon" href="<?php echo base_url('public/images/logo_panel.ico') ?>">
+        <link rel="shortcut icon" href="<?php echo base_url('public/images/billete.ico') ?>">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

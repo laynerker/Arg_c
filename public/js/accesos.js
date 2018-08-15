@@ -75,56 +75,6 @@ $(function () {
                     }
                 }
             },
-            nac: {
-                message: 'La nacionalidad no es valido',
-                validators: {
-                    notEmpty: {
-                        message: 'El Campo no puede estar en blanco'
-                    }
-                }
-            },
-            ci: {
-                validators: {
-                    notEmpty: {
-                        message: 'El Campo no puede estar en blanco'
-                    },
-                    stringLength: {
-                        min: 5,
-                        max: 10,
-                        message: 'La Cedula debe ser mayor de 5 y menos de 10 caracteres de longitud'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]+$/,
-                        message: 'La Cedula debe ser solo numerica'
-                    },
-                    remote: {
-                        url: base_url + 'Cgeneral/validacionGeneral/personas/ci',
-                        type: 'POST',
-                        message: 'El numero de célula ya se encuantra registrado'
-                    }
-                }
-            },
-            tlf: {
-                validators: {
-                    notEmpty: {
-                        message: 'El Campo no puede estar en blanco'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]{4}\-\d{7}$/,
-                        message: 'formato incorrecto, ejemplo: 0123-1234567'
-                    }
-                }
-            },
-            correo: {
-                validators: {
-                    emailAddress: {
-                        message: 'El correo no es valido'
-                    },
-                    notEmpty: {
-                        message: 'El Campo no puede estar en blanco'
-                    }
-                }
-            },
             perfil: {
                 message: 'El perfil no es valido',
                 validators: {
@@ -227,37 +177,12 @@ $(function () {
                 $("#id_persona").val(data[0].id_persona);
                 $("#nombre").val(data[0].nombre);
                 $("#apellido").val(data[0].apellido);
-                $("#correo").val(data[0].correo);
-                $("#tlf").val(data[0].telefono);
-                $("#ci").val(data[0].ci);
                 $("#user").val(data[0].usuario);
             }
         });
         $('#formCrear').formValidation('removeField', 'passwd');
         $('#formCrear').formValidation('removeField', 'passwd2');
-        $('#formCrear').formValidation('removeField', 'ci');
-        $('#formCrear').formValidation('removeField', 'user');
-        $('#formCrear').formValidation('addField', 'ci', {
-                validators: {
-                    notEmpty: {
-                        message: 'El Campo no puede estar en blanco'
-                    },
-                    stringLength: {
-                        min: 5,
-                        max: 10,
-                        message: 'La Cedula debe ser mayor de 5 y menos de 10 caracteres de longitud'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]+$/,
-                        message: 'La Cedula debe ser solo numerica'
-                    },
-                    remote: {
-                        url: base_url + 'Cgeneral/validacionGeneral/personas/ci/id_persona/'+$('#id_persona').val(),
-                        type: 'POST',
-                        message: 'El numero de célula ya se encuantra registrado'
-                    }
-                }
-            });
+        $('#formCrear').formValidation('removeField', 'user');        
             $('#formCrear').formValidation('addField', 'user', {
                 validators: {
                     notEmpty: {
